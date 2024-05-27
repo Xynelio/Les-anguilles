@@ -12,5 +12,8 @@ func _process(delta):
 
 func update_grid_state(grid_state_dict):
 	for cell in grid_state_dict:
-		self.set_cell(0, cell, grid_state_dict[cell])
+		if  grid_state_dict[cell] == 1:
+			self.set_cell(0, cell, -1, Vector2i(0, 0))
+		elif  grid_state_dict[cell] == 0:
+			self.erase_cell(0, cell)
 	
